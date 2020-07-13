@@ -13,17 +13,17 @@ class Card extends React.Component {
       isHided: !state.isHided
     }));
   }
-
+ 
   render() {
     return (
       <div className='card'>
-        <a onClick={this.handleClick}>
+        <buttom onClick={this.handleClick}>
           <div className='title'>{this.props.user}</div>
           <div className='content'>
-            {/* { this.state.isHided ? '?': this.props.word} */}
-            {this.props.word}
+            { this.state.isHided ? '?': this.props.word}
+            {/* {this.props.word} */}
           </div>
-        </a>
+        </buttom>
       </div>
     )
   }
