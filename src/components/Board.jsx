@@ -11,7 +11,6 @@ export default props => {
       )
     })
 
-
     return (
       <div className='board'>
         <div className='cards'>
