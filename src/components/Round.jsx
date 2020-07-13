@@ -7,7 +7,7 @@ class Round extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      players: JSON.parse(localStorage.getItem('@game')).game || props.participants,
+      players: localStorage.getItem('@game') ? JSON.parse(localStorage.getItem('@game')).game : props.participants,
     }
   }
 
