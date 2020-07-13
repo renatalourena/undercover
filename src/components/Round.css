@@ -1,0 +1,10 @@
+.generate {
+  display: flex;
+  justify-content: center;
+}
+
+.generate button {
+  font-size: 18px;
+  min-height: 50px;
+  min-width: 100px;
+}

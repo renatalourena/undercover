@@ -9,3 +9,15 @@
   margin: 20px;
   height: 50px;
 }
+
+.board .start-button {
+  display: flex;
+  justify-content: center;
+}
+
+.start-button  button{
+  margin: 10px;
+  font-size: 18px;
+  min-height: 50px;
+  min-width: 100px;
+}

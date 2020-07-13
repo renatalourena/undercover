@@ -17,13 +17,13 @@ class Card extends React.Component {
   render() {
     return (
       <div className='card'>
-        <buttom onClick={this.handleClick}>
+        <button onClick={this.handleClick}>
           <div className='title'>{this.props.user}</div>
           <div className='content'>
-            { this.state.isHided ? '?': this.props.word}
-            {/* {this.props.word} */}
+            {/* { this.state.isHided ? '?': this.props.word} */}
+            {this.props.word}
           </div>
-        </buttom>
+        </button>
       </div>
     )
   }
