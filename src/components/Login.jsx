@@ -21,10 +21,10 @@ class Login extends React.Component {
       <div >
         <div className="login">
           <div>Players:</div>
-          <div><input value={this.state.player1} type="text" /></div>
-          <div><input value={this.state.player2} type="text" /></div>
-          <div><input value={this.state.player3} type="text" /></div>
-          <div><input value={this.state.player4} type="text" /></div>
+          <div><input value={this.state.player1} type="text" readOnly/></div>
+          <div><input value={this.state.player2} type="text" readOnly /></div>
+          <div><input value={this.state.player3} type="text" readOnly /></div>
+          <div><input value={this.state.player4} type="text" readOnly /></div>
           <div>
             <button className="join-button" onClick={this.addParticipants}>
               Join!
