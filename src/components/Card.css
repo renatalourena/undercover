@@ -9,6 +9,13 @@
   min-width: 200px;
 }
 
+.disabled {
+  pointer-events: none;
+  /* for "disabled" effect */
+  opacity: 0.5;
+  background: #CCC;
+}
+
 .card .title {
   font-size: 18px;
   padding: 5px 0px;
@@ -24,8 +31,19 @@
   padding: 20px;
   flex-grow: 1;
   border-radius: 0px 0px 10px 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-.card button {
+.card .content  button {
+  margin-top: 10px;
+  height: 30px;
+}
+.card .user-card {
   padding: 0px;
+}
+
+.card .eliminate{
+  background-color: #c94c4c;
+  border: none;
 }
