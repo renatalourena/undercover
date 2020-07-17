@@ -24,7 +24,7 @@ class Round extends React.Component {
     return (
       <div>
         <div className="generate">
-          <button onClick={this.generateGame}>Generate</button>
+          <button onClick={this.generateGame}>Shuffle</button>
         </div>
         <div>
           <Board
