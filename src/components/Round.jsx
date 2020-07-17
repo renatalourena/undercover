@@ -3,6 +3,7 @@ import React from 'react'
 import Board from './Board';
 import distributeWords from '../utils/distributeWords'
 import './Round.css'
+import pairs from '../pairs'
 
 class Round extends React.Component {
   constructor(props) {
@@ -27,7 +28,10 @@ class Round extends React.Component {
           <button onClick={this.generateGame}>Generate</button>
         </div>
         <div>
-          <Board participants={this.state.players} />
+          <Board
+            participants={this.state.players}
+            undercover={pairs[0].undercover}
+            undercoverNumber={1} />
         </div>
       </div>
     );

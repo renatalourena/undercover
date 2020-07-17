@@ -1,6 +1,5 @@
 import React from 'react'
 import './Card.css'
-import pairs from '../pairs'
 
 class Card extends React.Component {
   constructor(props) {
@@ -22,6 +21,7 @@ class Card extends React.Component {
       this.setState({
         isEliminated: true
       });
+      this.props.check(this.props.user)
   }
 
   render() {
