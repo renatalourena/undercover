@@ -9,13 +9,12 @@ class Round extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      players: localStorage.getItem('@game') ? JSON.parse(localStorage.getItem('@game')).game : props.participants,
+      players: props.participants,
     }
   }
 
   generateGame = () => {
     const game = distributeWords(this.props.participants)
-    localStorage.setItem('@game', JSON.stringify({ game }))
     this.setState({
       players: game
     });

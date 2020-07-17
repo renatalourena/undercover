@@ -8,6 +8,7 @@ class Card extends React.Component {
       isHided: true,
       isEliminated: false
     };
+
     this.handleClick = this.handleClick.bind(this);
   }
 
