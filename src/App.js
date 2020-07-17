@@ -15,7 +15,7 @@ function App() {
       </div>
       <div>
       <Switch>
-        <Redirect exact from="/" to="/login" />
+        <Redirect exact from="/" to="/session" />
         <Route path="/login" component={Login} />
         <Route path="/session" component={ () => <Round participants={participants}/> } />
       </Switch>
