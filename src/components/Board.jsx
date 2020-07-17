@@ -48,7 +48,6 @@ export default props => {
         <Modal show={showUndercoverModal} handleClose={closeUndercoverModal}>
           <p>YES!!! you found the undercover</p>
         </Modal>
-        {/* <button type="button" onClick={closeModal}>show</button> */}
       </div>
       <div className='cards'>
         {composedCards}
