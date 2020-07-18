@@ -9,7 +9,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <div class="home">
+        <div className="home">
             <h1>Welcome to Undercover!</h1>
             <Link to="/login">Click here to start the game</Link>
         </div>
