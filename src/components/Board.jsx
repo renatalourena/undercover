@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Card from './Card'
 import './Board.css'
 import eliminateUser from './eliminateUser'
-import gameIsOver from './gameIsOver'
+import analyzeGame from './analyzeGame'
 import Modal from './Modal'
 
 export default props => {
@@ -10,24 +10,27 @@ export default props => {
   const [players, setPlayers] = useState(props.participants)
   const [showCivilianModal, setShowCivilianModal] = useState(false)
   const [showUndercoverModal, setShowUndercoverModal] = useState(false)
+  const [winner, setWinner] = useState('undefined')
 
   const checkGameStatus = (user) => {
     const updatedPlayers = eliminateUser(user, players)
     setPlayers(updatedPlayers)
 
-    const isGameIsOver = gameIsOver(props.undercover, props.undercoverNumber, updatedPlayers)
-    if(!isGameIsOver){
+    const gameStatus = analyzeGame(props.undercover, props.undercoverNumber, updatedPlayers)
+    if (!gameStatus.gameIsOver) {
       setShowCivilianModal(true)
     } else {
+      setWinner(gameStatus.whoWon)
       setShowUndercoverModal(true)
+
     }
   }
 
-  const closeCivilianModal = () =>{
+  const closeCivilianModal = () => {
     setShowCivilianModal(false)
   }
 
-  const closeUndercoverModal = () =>{
+  const closeUndercoverModal = () => {
     setShowUndercoverModal(false)
   }
 
@@ -46,7 +49,7 @@ export default props => {
           <p>Oh no! You eliminated a civilian!</p>
         </Modal>
         <Modal show={showUndercoverModal} handleClose={closeUndercoverModal}>
-          <p>YES!!! you found the undercover</p>
+          <p>Game is over: <h1><strong>{winner} won!</strong></h1></p>
         </Modal>
       </div>
       <div className='cards'>

@@ -1,11 +1,17 @@
 export default (undercover, undercoverNumbers, players) => {
   if (undercoverNumbers  * 2 === players.length) {
-    return true;
+    return {
+      gameIsOver: true,
+      whoWon: 'undercover'
+    }
   }
   
   const withoutUndercover = players.filter(player => player.word !== undercover)
   
   const hasOnlyCivilians = withoutUndercover.length === players.length
 
-  return hasOnlyCivilians
+  return {
+      gameIsOver: hasOnlyCivilians,
+      whoWon: hasOnlyCivilians ? 'civilians' : 'undercover'
+    }
 }
