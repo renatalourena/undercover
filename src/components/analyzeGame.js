@@ -1,17 +1,20 @@
-export default (undercover, undercoverNumbers, players) => {
-  if (undercoverNumbers  * 2 === players.length) {
+export default (undercoverNumbers, players) => {
+  const withoutUndercover = players.filter(player => {
+    // console.log(player.isUndercover)
+    return !player.isUndercover
+  })
+
+  const hasOnlyCivilians = withoutUndercover.length === players.length
+
+  if (undercoverNumbers * 2 === players.length && !hasOnlyCivilians) {
     return {
       gameIsOver: true,
       whoWon: 'undercover'
     }
   }
-  
-  const withoutUndercover = players.filter(player => player.word !== undercover)
-  
-  const hasOnlyCivilians = withoutUndercover.length === players.length
 
   return {
-      gameIsOver: hasOnlyCivilians,
-      whoWon: hasOnlyCivilians ? 'civilians' : 'undercover'
-    }
+    gameIsOver: hasOnlyCivilians,
+    whoWon: hasOnlyCivilians ? 'civilians' : 'undercover'
+  }
 }

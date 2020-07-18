@@ -1,7 +1,9 @@
 import shuffle from './shuffle'
-import pairs from '../pairs'
+import pickupPair from './pickupPair'
 
 export default (participants) => {
+  const pair = pickupPair()
+
   if (participants.length < 2) {
     return participants
   }
@@ -10,10 +12,12 @@ export default (participants) => {
 
   const players = shuffledPlayers.map(player => {
     if (isFirst) {
-      player.word = pairs[0].undercover
+      player.word = pair.undercover
+      player.isUndercover = true
       isFirst = false
     } else {
-      player.word = pairs[0].civilians
+      player.word = pair.civilians
+      player.isUndercover = false
     }
 
     return player

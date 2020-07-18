@@ -3,8 +3,9 @@ import distributeWords from './distributeWords';
 
 test('should return same list if less than 2 players', () => {
   let participants = [
-    { id: 1, user: 'Renata', word: 'no-word' },
+    { id: 1, user: 'Renata'},
   ]
+
   const players = distributeWords(participants)
   
   expect(players).toEqual(participants)
@@ -12,10 +13,11 @@ test('should return same list if less than 2 players', () => {
 
 test('should shuffle same and return similar list', () => {
   let participants = [
-    { id: 1, user: 'Renata', word: 'no-word' },
-    { id: 2, user: 'Felipe', word: 'no-word' },
-    { id: 3, user: 'Vanessa', word: 'no-word' },
+    { id: 1, user: 'Renata'},
+    { id: 2, user: 'Felipe'},
+    { id: 3, user: 'Vanessa'},
   ]
+
   const players = distributeWords(participants)
 
   expect(players.length).toBe(3)

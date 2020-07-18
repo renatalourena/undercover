@@ -15,8 +15,9 @@ export default props => {
   const checkGameStatus = (user) => {
     const updatedPlayers = eliminateUser(user, players)
     setPlayers(updatedPlayers)
+    
+    const gameStatus = analyzeGame(props.undercoverNumber, updatedPlayers)
 
-    const gameStatus = analyzeGame(props.undercover, props.undercoverNumber, updatedPlayers)
     if (!gameStatus.gameIsOver) {
       setShowCivilianModal(true)
     } else {
@@ -32,7 +33,7 @@ export default props => {
 
   const closeGameOverModal = () => {
     setShowGameOverModal(false)
-    window.location.reload(false);
+    // window.location.reload(false);
   }
 
   let composedCards = props.participants.map(participant => {
