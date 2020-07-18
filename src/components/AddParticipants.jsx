@@ -7,7 +7,7 @@ import './AddParticipants.css'
 
 export default () => {
   const [playerName, setPlayerName] = useState('')
-  const [playersList, setPlayersList] = useState([{ id: 1, user: "renata" }]);
+  const [playersList, setPlayersList] = useState([]);
   const [index, setIndex] = useState(2)
 
   const updatePlayerInput = (e) => {
@@ -35,10 +35,10 @@ export default () => {
         <button onClick={handleAdd}>+</button>
       </div>
       <div className="players-table">
-        <div>Players on the game</div>
+        <div>List of players in the game</div>
         <table>
           <tbody>
-            {playersList.map((item) => (
+            {playersList.length === 0 ? 'No players yet!': playersList.map((item) => (
               <tr key={item.id}>
                 <td>{item.user}</td>
                 <td>
