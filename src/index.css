@@ -9,3 +9,9 @@ button {
   color: #fff;
   border-radius: 10px;
 }
+
+button:disabled,
+button[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+}

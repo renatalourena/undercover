@@ -8,16 +8,18 @@ import pairs from '../pairs'
 export default (props) => {
 
   const [players, setPlayers] = useState(props.participants)
+  const [disableStartButton, setDisableStartButton] = useState(false)
   
   const generateGame = () => {
     const game = distributeWords(props.participants)
     setPlayers(game)
+    setDisableStartButton(true)
   };
 
   return (
     <div>
       <div className="generate">
-        <button onClick={generateGame}>Shuffle</button>
+        <button onClick={generateGame} disabled={disableStartButton} >Start</button>
       </div>
       <div>
         <Board
