@@ -10,12 +10,12 @@ export default class App extends React.Component {
     return (
       <div className="app">
         <div class="home">
-            <h1><Link to="/login">Welcome to Undercover!</Link></h1>
+            <h1>Welcome to Undercover!</h1>
+            <Link to="/login">Click here to start the game</Link>
         </div>
         <Switch>
-          <Route exact from="/" to="/login" />
+          <Route exact path="/" component={Login} />
           <Route path="/login" component={Login} />
-          {/* <Route path="/session" component={() => <Round participants={[]} />} /> */}
         </Switch>
       </div>
     )
