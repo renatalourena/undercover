@@ -38,14 +38,16 @@ export default () => {
         <div>List of players in the game</div>
         <table>
           <tbody>
-            {playersList.length === 0 ? 'No players yet!': playersList.map((item) => (
-              <tr key={item.id}>
-                <td>{item.user}</td>
-                <td>
-                  <button key={item.id} onClick={() => handleRemove(item.id)}>-</button>
-                </td>
-              </tr>
-            ))}
+            {playersList.length === 0 ?
+              <tr><td>'No players yet!'</td></tr>
+              : playersList.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.user}</td>
+                  <td>
+                    <button key={item.id} onClick={() => handleRemove(item.id)}>-</button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
 
         </table>
