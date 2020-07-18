@@ -32,6 +32,7 @@ export default props => {
 
   const closeGameOverModal = () => {
     setShowGameOverModal(false)
+    window.location.reload(false);
   }
 
   let composedCards = props.participants.map(participant => {
