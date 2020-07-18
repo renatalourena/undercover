@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import './AddParticipants.css'
 
 export default () => {
@@ -47,9 +48,10 @@ export default () => {
         </table>
       </div>
       <div>
-        <button className="join-button">
+        <Link to="/session">Join!</Link>
+        {/* <button className="join-button">
           Join!
-        </button>
+        </button> */}
       </div>
     </div>
   );
