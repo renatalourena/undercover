@@ -17,7 +17,7 @@ test('should shuffle same and return similar list', () => {
     { id: 3, user: 'Vanessa', word: 'no-word' },
   ]
   const players = distributeWords(participants)
-  // expect(players).toEqual({})
+
   expect(players.length).toBe(3)
   expect(players[0]).not.toBeUndefined()
 });
