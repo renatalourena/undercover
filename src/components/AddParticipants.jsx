@@ -26,7 +26,6 @@ export default () => {
     setPlayersList(newplayersList);
   }
 
-
   return (
     <div className="add-participants">
       <div>
@@ -53,7 +52,9 @@ export default () => {
         </table>
       </div>
       <div className="generate-board">
-        <Link to="/home/session">Generate board!</Link>
+        <Link to="/home/session">
+          <button >Generate board!</button>
+        </Link>
       </div>
       <Route path="/home/session" component={() => <Round participants={playersList} />} />
     </div>

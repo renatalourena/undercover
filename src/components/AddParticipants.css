@@ -14,13 +14,6 @@
   margin-top: 5px;
 }
 
-.generate-board {
-  margin-top: 50px;
-}
-.generate-board  a {
-  background-color: #405d27;
-  color: white;
-  padding: 20px;
-  text-decoration: none;
-  border-radius: 10px;
+.generate-board button {
+  height: 50px;
 }
