@@ -1,28 +1,24 @@
 import React from 'react';
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Route, Redirect, Switch, Link } from "react-router-dom";
 import './App.css';
-import participants from './participants'
-import Round from './components/Round';
 import Login from './components/Login'
 
 
-function App() {
+export default class App extends React.Component {
 
-  return (
-    <div className="app">
-      <div>
-        <center><h1>Welcome to Undercover!</h1></center>
+  render() {
+    return (
+      <div className="app">
+        <div class="home">
+            <h1><Link to="/login">Welcome to Undercover!</Link></h1>
+        </div>
+        <Switch>
+          <Route exact from="/" to="/login" />
+          <Route path="/login" component={Login} />
+          {/* <Route path="/session" component={() => <Round participants={[]} />} /> */}
+        </Switch>
       </div>
-      <div>
-      <Switch>
-        <Redirect exact from="/" to="/session" />
-        <Route path="/login" component={Login} />
-        <Route path="/session" component={ () => <Round participants={participants}/> } />
-      </Switch>
-       
-      </div>
-    </div>
-  );
+    )
+  }
 }
 
-export default App;

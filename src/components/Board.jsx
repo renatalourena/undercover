@@ -50,7 +50,7 @@ export default props => {
           <p>Oh no! You eliminated a civilian!</p>
         </Modal>
         <Modal show={showGameOverModal} handleClose={closeGameOverModal}>
-          <p>Game is over: <h1><strong>{winner} won!</strong></h1></p>
+          <p>Game is over: <strong>{winner} won!</strong></p>
         </Modal>
       </div>
       <div className='cards'>

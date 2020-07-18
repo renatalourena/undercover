@@ -1,4 +1,7 @@
-.generate {
+.board-game {
+  margin: 50px;
+}
+.board .generate {
   display: flex;
   justify-content: center;
 }

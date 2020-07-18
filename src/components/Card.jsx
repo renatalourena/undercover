@@ -33,8 +33,8 @@ class Card extends React.Component {
         </div>
         <div className='content'>
           <button className="user-card" onClick={this.handleClick}>
-            {/* {this.state.isHided ? '?' : this.props.word} */}
-            {this.props.word}
+            {this.state.isHided ? '?' : this.props.word}
+            {/* {this.props.word === '' ? '-'  : this.props.word } */}
           </button>
           <button className="eliminate" onClick={this.eliminate}>
             Eliminate

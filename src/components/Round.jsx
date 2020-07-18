@@ -11,13 +11,13 @@ export default (props) => {
   const [disableStartButton, setDisableStartButton] = useState(false)
   
   const generateGame = () => {
-    const game = distributeWords(props.participants)
+    const game = distributeWords(players)
     setPlayers(game)
     setDisableStartButton(true)
   };
 
   return (
-    <div>
+    <div className="board-game">
       <div className="generate">
         <button onClick={generateGame} disabled={disableStartButton} >Start</button>
       </div>

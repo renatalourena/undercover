@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
+import Round from './Round'
 import './AddParticipants.css'
+
+
 
 export default () => {
   const [playerName, setPlayerName] = useState('')
-  const [playersList, setPlayersList] = useState([{id: 1, name: "renata"}]);
+  const [playersList, setPlayersList] = useState([{ id: 1, user: "renata" }]);
   const [index, setIndex] = useState(2)
 
   const updatePlayerInput = (e) => {
@@ -12,7 +15,7 @@ export default () => {
   }
 
   function handleAdd() {
-    const newplayersList = playersList.concat({ id: index, name: playerName });
+    const newplayersList = playersList.concat({ id: index, user: playerName });
     setPlayersList(newplayersList);
     setPlayerName('')
     setIndex(index + 1)
@@ -32,12 +35,12 @@ export default () => {
         <button onClick={handleAdd}>+</button>
       </div>
       <div className="players-table">
-        <div>Players</div>
+        <div>Players on the game</div>
         <table>
           <tbody>
             {playersList.map((item) => (
-              <tr>
-                <td>{item.name}</td>
+              <tr key={item.id}>
+                <td>{item.user}</td>
                 <td>
                   <button key={item.id} onClick={() => handleRemove(item.id)}>-</button>
                 </td>
@@ -47,12 +50,11 @@ export default () => {
 
         </table>
       </div>
-      <div>
-        <Link to="/session">Join!</Link>
-        {/* <button className="join-button">
-          Join!
-        </button> */}
+      <div className="generate-board">
+        <Link to="/login/session">Generate board!</Link>
       </div>
+      <Route path="/login/session" component={() => <Round participants={playersList} />} />
+      {/* <Route path="/login" component={Login} />  */}
     </div>
   );
 };
