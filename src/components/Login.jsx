@@ -1,39 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import './Login.css'
+import AddParticipants from "./AddParticipants";
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      player1: '',
-      player2: '',
-      player3: '',
-      player4: '',
-    };
+export default (props) => {
+
+
+  const [playerName, setPlayerName] = useState('')
+  let playersList = []
+
+  const updatePlayerInput = (e) => {
+    setPlayerName(e.target.value)
   }
 
-  addParticipants = () => {
-    //TODO
+  const addParticipants = () => {
+   
   }
 
-  render() {
-    return (
-      <div >
-        <div className="login">
-          <div>Players:</div>
-          <div><input value={this.state.player1} type="text" readOnly/></div>
-          <div><input value={this.state.player2} type="text" readOnly /></div>
-          <div><input value={this.state.player3} type="text" readOnly /></div>
-          <div><input value={this.state.player4} type="text" readOnly /></div>
-          <div>
-            <button className="join-button" onClick={this.addParticipants}>
-              Join!
-          </button>
-          </div>
+  return (
+    <div >
+      <div className="login">
+        <div>
+          <AddParticipants></AddParticipants>
         </div>
-
+        
       </div>
-    );
-  }
+
+    </div>
+  );
 }
-export default Login;
