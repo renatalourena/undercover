@@ -9,7 +9,7 @@ export default props => {
 
   const [players, setPlayers] = useState(props.participants)
   const [showCivilianModal, setShowCivilianModal] = useState(false)
-  const [showUndercoverModal, setShowUndercoverModal] = useState(false)
+  const [showGameOverModal, setShowGameOverModal] = useState(false)
   const [winner, setWinner] = useState('undefined')
 
   const checkGameStatus = (user) => {
@@ -21,7 +21,7 @@ export default props => {
       setShowCivilianModal(true)
     } else {
       setWinner(gameStatus.whoWon)
-      setShowUndercoverModal(true)
+      setShowGameOverModal(true)
 
     }
   }
@@ -30,8 +30,8 @@ export default props => {
     setShowCivilianModal(false)
   }
 
-  const closeUndercoverModal = () => {
-    setShowUndercoverModal(false)
+  const closeGameOverModal = () => {
+    setShowGameOverModal(false)
   }
 
   let composedCards = props.participants.map(participant => {
@@ -48,7 +48,7 @@ export default props => {
         <Modal show={showCivilianModal} handleClose={closeCivilianModal}>
           <p>Oh no! You eliminated a civilian!</p>
         </Modal>
-        <Modal show={showUndercoverModal} handleClose={closeUndercoverModal}>
+        <Modal show={showGameOverModal} handleClose={closeGameOverModal}>
           <p>Game is over: <h1><strong>{winner} won!</strong></h1></p>
         </Modal>
       </div>
