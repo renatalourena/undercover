@@ -1,7 +1,7 @@
 import React from 'react';
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import './App.css';
-import Login from './components/Login'
+import AddParticipants from './components/AddParticipants'
 
 
 export default class App extends React.Component {
@@ -11,11 +11,10 @@ export default class App extends React.Component {
       <div className="app">
         <div className="home">
             <h1>Welcome to Undercover!</h1>
-            <Link to="/login">Click here to start the game</Link>
         </div>
         <Switch>
-          <Route exact path="/" component={Login} />
-          <Route path="/login" component={Login} />
+          <Route exact path="/" component={AddParticipants} />
+          <Route path="/home" component={AddParticipants} />
         </Switch>
       </div>
     )

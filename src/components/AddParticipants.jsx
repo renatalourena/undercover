@@ -53,10 +53,9 @@ export default () => {
         </table>
       </div>
       <div className="generate-board">
-        <Link to="/login/session">Generate board!</Link>
+        <Link to="/home/session">Generate board!</Link>
       </div>
-      <Route path="/login/session" component={() => <Round participants={playersList} />} />
-      {/* <Route path="/login" component={Login} />  */}
+      <Route path="/home/session" component={() => <Round participants={playersList} />} />
     </div>
   );
 };
