@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import './App.css';
 import AddParticipants from './components/AddParticipants'
+import Header from './components/Header';
 
 
 export default class App extends React.Component {
@@ -9,9 +10,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="home">
-            <h1>Welcome to Undercover!</h1>
-        </div>
+        <Header/>
         <Switch>
           <Route exact path="/" component={AddParticipants} />
           <Route path="/home" component={AddParticipants} />

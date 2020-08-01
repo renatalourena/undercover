@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Card from './Card'
 import './Board.css'
-import eliminateUser from './eliminateUser'
-import analyzeGame from './analyzeGame'
+import eliminateUser from '../utils/eliminateUser'
+import analyzeGame from '../utils/analyzeGame'
 import Modal from './Modal'
 
 export default props => {

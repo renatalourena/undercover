@@ -9,7 +9,7 @@ export default props => {
       <section className="modal-main">
         {props.children}
         <button onClick={props.handleClose}>close</button>
-      </section>
+    </section>
     </div>
   );
 };
